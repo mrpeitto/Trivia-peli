@@ -1,0 +1,22 @@
+body {
+    text-align: center;
+    background: #c60909;
+    color: #ffffff;
+}
+
+.game-header {
+    background: #000000;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+.dice-panel,
+.player-card {
+    background: #000000;
+    border-radius: 1rem;
+    padding: 1rem;
+
+}
+
+.player-image {
+    width: 4rem;
+}

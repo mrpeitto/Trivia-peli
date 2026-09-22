@@ -16,6 +16,10 @@ body {
     border-radius: 1rem;
     padding: 1rem;
 }
+.Space {
+    
+}
+
 .dice-panel,
 .player-card {
     background: #000000;

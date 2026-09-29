@@ -24,7 +24,7 @@ function CreateBoardCoordinates() {
     for (let column = 6; column >= 1; column -= 1) {
         coordinates.push( { row: 4, column})
     }
-    for (let row = 3; row >= 2; row -= 2) {
+    for (let row = 3; row >= 2; row -= 1) {
         coordinates.push( { row, column: 1})
     }
 
@@ -43,6 +43,11 @@ function CreateBoard() {
         const newSpace = document.createElement("div");
 
         newSpace.className = "Space";
+
+        newSpace.style.gridColumn = coordinate.column;
+        newSpace.style.gridRow = coordinate.row;
+
+        newSpace.dataset.category = category.id;
 
         newSpace.textContent = category.name;
 

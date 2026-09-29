@@ -15,17 +15,39 @@ body {
     background: #000000;
     border-radius: 1rem;
     padding: 1rem;
-}
-.Space {
     
 }
 
+.board {
+    background: #c60909;
+    padding: 1rem;
+    border-radius: 1rem;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.Space {
+    background: rgb(252, 252, 252);
+    color: #000000;
+    padding: 0.3rem;
+    border-radius: 1rem;
+    font-weight: bold;
+    display: grid;
+    place-items: center;
+}
+
+[data-category="maantieto"] { background: green;}
+[data-category="yleistieto"] { background: orange;}
+[data-category="historia"] { background: yellow;}
+[data-category="taide ja kulttuuri"] { background: blue;}
+[data-category="tiede"] { background: purple;}
+[data-category="urheilu"] { background: palevioletred;}
 .dice-panel,
 .player-card {
     background: #000000;
     border-radius: 1rem;
     padding: 1rem;
-
 }
 
 .player-image {

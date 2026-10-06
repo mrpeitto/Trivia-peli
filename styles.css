@@ -48,8 +48,28 @@ body {
     background: #000000;
     border-radius: 1rem;
     padding: 1rem;
+  
+}
+
+.dice-panel{
+display: grid;
+place-items: center;
 }
 
 .player-image {
     width: 4rem;
+}
+
+.die-box{
+    background: #929191;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 1rem;
+    border: 0.3rem solid rgb(255, 255, 255);
+    display: grid;
+    place-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }

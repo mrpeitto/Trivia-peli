@@ -7,9 +7,26 @@ const CATEGORIES = [
     {id: "urheilu", name: "Urheilu"}
 ]
 
+const gameState = {
+    player: {
+        name: "Player",
+        position: 0,
+        collectedCategories: new Set()
+    },
+    computer: {
+        name: "Chatgpt",
+        position: 0,
+        collectedCategories: new Set()
+    },
+    currentTurn: "player"
+};
+
 const BOARD_SIZE = 18
 const boardElement = document.querySelector("#board")
+const rollButtonElement = document.querySelector("#rollButton")
+const dieboxElement = document.querySelector("#diebox")
 
+rollButtonElement.addEventListener("click", RollDie)
 CreateBoard();
 
 function CreateBoardCoordinates() {
@@ -30,6 +47,7 @@ function CreateBoardCoordinates() {
 
     return coordinates;
 }
+
 
 function CreateBoard() {
     const coordinates = CreateBoardCoordinates();
@@ -53,4 +71,11 @@ function CreateBoard() {
 
         boardElement.append(newSpace);
     }
+}
+
+function RollDie() {
+    let diceResult = Math.floor( Math.random() * 6)+1; 
+
+    dieboxElement.textContent = diceResult;
+
 }

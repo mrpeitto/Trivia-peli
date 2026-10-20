@@ -68,7 +68,7 @@ function CreateBoard() {
         newSpace.dataset.category = category.id;
 
         newSpace.textContent = category.name;
-
+        newSpace.dataset.spaceIndex = index;
         boardElement.append(newSpace);
     }
 }
@@ -78,4 +78,16 @@ function RollDie() {
 
     dieboxElement.textContent = diceResult;
 
+    gameState.player.position = gameState.player.position + diceResult;
+
+    updateTokens();
+
+}
+
+function updateTokens(){
+    var currentSpace = document.querySelector(`[data-space-index="${gameState.player.position}"]`)
+    var token = document.createElement("token");
+    token.textContent = "p";
+    token.className = "token;"
+    currentSpace.append(token);
 }

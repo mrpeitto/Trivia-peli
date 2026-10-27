@@ -78,16 +78,19 @@ function RollDie() {
 
     dieboxElement.textContent = diceResult;
 
-    gameState.player.position = gameState.player.position + diceResult;
+    gameState.player.position = (gameState.player.position + diceResult) % BOARD_SIZE;
 
     updateTokens();
 
 }
 
 function updateTokens(){
+    document.querySelectorAll(".token").forEach( (token) =>{
+        token.remove();
+    } );
     var currentSpace = document.querySelector(`[data-space-index="${gameState.player.position}"]`)
     var token = document.createElement("token");
     token.textContent = "p";
-    token.className = "token;"
+    token.className = "token";
     currentSpace.append(token);
 }

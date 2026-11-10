@@ -87,7 +87,8 @@ function RollDie() {
 
     var currentCategory = CATEGORIES[gameState.player.position % CATEGORIES.length];
 
-    getQuestion(currentCategory.id);
+    //var questionData = await getQuestion(currentCategory.id);
+    //ShowQuestion(questionData);
 }
 
 function updateTokens(){
@@ -116,9 +117,16 @@ async function getQuestion(targetCategory) {
         })
 
     });
-
+    if(!response.ok) {
+        throw new Error("Tapahtui ongelma")
+    }
     var data = await response.json();
     console.log(data)
     console.log(data[0])
+    return data[0]
 
+}
+
+function showQuestion(questionData) {
+    playerQuestionText.innerHTML = questionData.question;
 }
